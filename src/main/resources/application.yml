@@ -1,0 +1,38 @@
+spring:
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+      cluster-name: elasticsearch
+      cluster-nodes: localhost:9200
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:
+    username:
+    password:
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+logging:
+  level:
+    org:
+      hibernate: INFO
+#      elasticsearch:
+#        client: TRACE
+#      apache:
+#        http: TRACE
+      springframework:
+        data:
+          elasticsearch:
+            client:
+              WIRE: TRACE
+            core: TRACE
+
+
